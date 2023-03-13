@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tran Quang Thanh - About</title>
         <link rel="icon" href="/TQT-Page_Files/Monosias_Avatar.jpg" sizes="any">
         <link rel="icon" href="/TQT-Page_Files/Artboard 1.png">
         <link rel="stylesheet" href="/static/css/TQT-Page.css">
         <script src="/static/js/TQT-Page.js"></script>
     </head>
-    <body data-nav="false">
+    <body onload="checkPlatform()" data-nav="false">
         <main></main>
 
         <nav id="nav">
@@ -68,5 +69,19 @@
                 document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
             };
         </script>
+         <script>
+      function checkPlatform() {
+        var userAgent = navigator.userAgent;
+        if (userAgent.match(/Android/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)) {
+          // Code to adjust size for mobile devices
+          document.body.style.width = "100vw"; /* 100% of the viewport width */
+          document.body.style.height = "100vh"; /* 100% of the viewport height */
+        } else {
+          // Code to adjust size for desktop devices
+          document.body.style.width = "80vw"; /* 80% of the viewport width */
+          document.body.style.height = "80vh"; /* 80% of the viewport height */
+        }
+      }
+    </script>
     </body>
 </html>
